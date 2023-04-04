@@ -1,0 +1,8 @@
+Alarms:
+  - update state of list of alarms when the switch for turning on and off the alarm is toggled
+  - delete alarms
+Home:
+  - make graph using dummy data showing sleep duration and snore duration @done
+- make login screen
+- make register screen
+- make user stack
