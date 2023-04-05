@@ -8,13 +8,13 @@ import _thread
 import dht
 
 key = b'[Secret Wokwi key with 256 bits]'
-iv = b'secret-iv-123456' # In real life, uos.urandom(16)
+iv = b'secret-iv-123456'
 
 MODE_CBC = 2
 cipher = aes(key, MODE_CBC, iv)
 
-SSID = "ENDEAVOUR"
-PASSWORD = "1234567890"
+SSID = "<your_SSID>"
+PASSWORD = "<your_SSID_password>"
 
 # connect to WiFi
 def connect():
