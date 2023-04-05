@@ -176,10 +176,5 @@ def send_data():
 _thread.start_new_thread(receive_data, (server_socket,))
 _thread.start_new_thread(send_data, ())
 
-# keep the main thread alive
-while True:
-   pass
-
-
 
 
