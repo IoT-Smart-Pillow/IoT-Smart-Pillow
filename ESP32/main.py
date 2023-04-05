@@ -8,13 +8,13 @@ import _thread
 import dht
 
 key = b'[Secret Wokwi key with 256 bits]'
-iv = b'secret-iv-123456'
+iv = b'secret-iv-123456' # In real life, uos.urandom(16)
 
 MODE_CBC = 2
 cipher = aes(key, MODE_CBC, iv)
 
-SSID = "<your_SSID>"
-PASSWORD = "<your_SSID_password>"
+SSID = "ENDEAVOUR"
+PASSWORD = "1234567890"
 
 # connect to WiFi
 def connect():
@@ -41,11 +41,9 @@ pressure_adc.atten(machine.ADC.ATTN_0DB)
 
 sound_analog_pin = machine.Pin(32)
 
-motor_pin = machine.Pin(26, machine.Pin.OUT)
-# motor_pin.on()
+led_pin = machine.Pin(26, machine.Pin.OUT)
 
-motor_pin_2 = machine.Pin(0, machine.Pin.OUT)
-# motor_pin.on()
+motor_pin = machine.Pin(0, machine.Pin.OUT)
 
 tilt_pin = machine.Pin(22, machine.Pin.IN)
 
@@ -78,10 +76,10 @@ def receive_data(sock):
                     break
                 print("Received data:", data.decode())
                 # print("I am here")
-                motor_pin_2.on()
+                motor_pin.on()
                 
                 time.sleep(20)
-                motor_pin_2.off()
+                motor_pin.off()
                 
                 
             except OSError:
@@ -115,13 +113,13 @@ def send_data():
             
             if prsr_sensor_value > 0 :
                 
-                motor_pin.on()
+                led_pin.on()
                 #time.sleep(0.5)
-                #motor_pin.off()
+                #led_pin.off()
                 #time.sleep(0.5)
                 
                 time.sleep(5)
-                motor_pin.off()
+                led_pin.off()
                 #print("Head Detected")
                 try:
                     d.measure()
@@ -151,12 +149,12 @@ def send_data():
                 
                 
                 # Turn motor on
-                # motor_pin.value(1)
+                # led_pin.value(1)
                 # time.sleep(5)
                 
                 # Turn motor off
                 
-                # motor_pin.value(0)
+                # led_pin.value(0)
                 
                 # if snd_sensor_value > 500 :
                 # Print amplitude value to console
@@ -175,6 +173,4 @@ def send_data():
 # start the two threads
 _thread.start_new_thread(receive_data, (server_socket,))
 _thread.start_new_thread(send_data, ())
-
-
 
