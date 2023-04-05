@@ -7,24 +7,35 @@ import {
   Modal,
   Alert,
   Pressable,
+  Button,
+  ToastAndroid,
 } from "react-native";
 import React, { useState, useEffect } from "react";
-import Ionicons from "react-native-vector-icons/Ionicons";
+// import Ionicons from "react-native-vector-icons/Ionicons";
 import DateTimePicker from "@react-native-community/datetimepicker";
 // import { isAM, isPM } from "is-am-pm";
 // import format from "formatter-datetime";
 import axios from "axios";
-
+import { Ionicons } from "@expo/vector-icons";
 import Item from "./../components/Item";
+import { client } from "./../../request";
 
 const AlarmScreen = () => {
+  function showToastTime(time) {
+    const text = "Alarm set for: " + time;
+    ToastAndroid.show(text, ToastAndroid.SHORT);
+  }
+  function showToastText(time) {
+    const text = "Alarm deleted for: " + time;
+    ToastAndroid.show(text, ToastAndroid.SHORT);
+  }
   const [alarms, setAlarms] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
   const [time, setTime] = useState(null);
   useEffect(() => {
     const fetchAlarms = async () => {
       let reqOptions = {
-        url: "http://3.252.69.159:8080/alarm",
+        url: "http://34.250.240.208:8080/alarm",
         method: "GET",
       };
 
@@ -32,8 +43,8 @@ const AlarmScreen = () => {
       setAlarms(response.data.alarm_times);
     };
     fetchAlarms();
-  }, [alarms]);
-  let updatedAlarms={};
+  }, []);
+  let updatedAlarms = {};
   if (alarms.length > 0) {
     updatedAlarms = alarms.map((alarm) => {
       const [hour, minute] = alarm.alarm_time.split(":");
@@ -100,7 +111,7 @@ const AlarmScreen = () => {
     };
 
     let reqOptions = {
-      url: "http://3.252.69.159:8080/alarm",
+      url: "http://34.240.13.190:8080/alarm",
       method: "POST",
       data: newAlarm,
     };
@@ -108,9 +119,40 @@ const AlarmScreen = () => {
     let response = await axios.request(reqOptions);
     // console.log(response.data.status);
     setAlarms(alarms.concat(newAlarmState));
+    showToastTime(currentTime);
   };
   // console.log(time);
   // console.log(alarms);
+  const removeAlarm = async (alarm_time, alarm_date, id) => {
+    setAlarms((alarms) => {
+      return alarms.filter((goal) => goal.id !== id);
+    });
+    // console.log(alarm_date);
+    // console.log(alarm_time);
+    let time = "";
+    const h = alarm_time.split(":")[0];
+    // console.log(typeof h);
+    const m = alarm_time.split(":")[1];
+    const h1 = parseInt(Number(h)) - 1;
+    time = h1 + ":" + m;
+    // console.log(time);
+    const reqBody = {
+      time: time,
+      date: alarm_date,
+    };
+    // console.log(reqBody)
+    try {
+      await client.delete("/alarm", { data: reqBody }).then((response) => {
+        // console.log(response);
+        if (response.status === 200) {
+          // console.log("Alarm Deleted!!!");
+          showToastText(alarm_time);
+        }
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <View style={styles.container}>
       {modalVisible && (
@@ -126,14 +168,41 @@ const AlarmScreen = () => {
       <FlatList
         data={updatedAlarms}
         renderItem={({ item }) => (
-          <Item
-            time={item.alarm_time}
-            date={item.alarm_date}
-            setAlarms={setAlarms}
-            key={item.id}
-            id={item.id}
-            alarms={alarms}
-          />
+          // <Item
+          //   time={item.alarm_time}
+          //   date={item.alarm_date}
+          //   setAlarms={setAlarms}
+          //   key={item.id}
+          //   id={item.id}
+          //   alarms={alarms}
+          // />
+          <View style={styles.item}>
+            <View>
+              <Text style={styles.time}>{item.alarm_time}</Text>
+              <Text style={{ flex: 1, fontSize: 12 }}>{item.alarm_date}</Text>
+            </View>
+            <View style={styles.title}>
+              <Text style={{ fontSize: 12 }}>Alarm</Text>
+            </View>
+            <Pressable
+              style={{ elevation: 100 }}
+              onPress={() =>
+                removeAlarm(item.alarm_time, item.alarm_date, item.id)
+              }
+            >
+              <Ionicons name="trash-outline" size={24} color="red" />
+              {/* <Text
+                style={{
+                  color: "red",
+                  borderWidth: 1,
+                  borderColor: "red",
+                  padding: 5,
+                }}
+              >
+                DELETE
+              </Text> */}
+            </Pressable>
+          </View>
         )}
       />
       <Pressable
@@ -200,6 +269,25 @@ const styles = StyleSheet.create({
   modalText: {
     marginBottom: 15,
     textAlign: "center",
+  },
+  item: {
+    // backgroundColor: "lightblue",
+    paddingVertical: 20,
+    // marginVertical: 3,
+    // marginHorizontal: 16,
+    fles: 1,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    borderBottomWidth: 1,
+    borderColor: "lightgray",
+    // elevation:1
+  },
+  time: {
+    paddingHorizontal: 10,
+    fontSize: 18,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 export default AlarmScreen;

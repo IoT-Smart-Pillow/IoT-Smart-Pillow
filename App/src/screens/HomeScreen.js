@@ -11,6 +11,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import LoadingIndicator from "./../components/LoadingIndicator";
 import Chart from "./../components/Chart";
+import ChartM from "./../components/ChartM";
 import { client } from "./../../request";
 
 const HomeScreen = () => {
@@ -55,7 +56,7 @@ const HomeScreen = () => {
     }
     const avgTemp = (totalTemp / sensorData.length).toFixed(1);
     const avgHumidity = (totalHumidity / sensorData.length).toFixed(1);
-
+    // console.log(sensorData);
     return (
       <View style={{ flex: 1, flexDirection: "column" }}>
         <View style={styles.chartContainer}>
@@ -64,9 +65,9 @@ const HomeScreen = () => {
           </Text>
           <Chart plotData={soundDataReq} />
           <Text style={{ fontWeight: "bold", fontSize: 16, padding: 10 }}>
-            Tilt:{" "}
+            Motion:{" "}
           </Text>
-          <Chart plotData={tiltDataReq} />
+          <ChartM plotData={tiltDataReq} />
         </View>
         <View style={styles.buttonContainer}>
           <View style={styles.singleButtonContainer}>

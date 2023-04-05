@@ -33,7 +33,7 @@ const Chart = ({ plotData }) => {
             allowPan={true}
           />
         }
-        // domain={{x: [1, 10], y: [40, 100]}}
+        domain={{y: [0.0, 1.2]}}
         animate={{
           duration: 2000,
           onLoad: { duration: 1000 },
@@ -49,6 +49,8 @@ const Chart = ({ plotData }) => {
           data={plotData}
           scale="linear"
         />
+        <VictoryAxis label={"Time"} tickFormat={() => ''} />
+        <VictoryAxis dependentAxis tickFormat={() => ''} label={"Motion"}/>
       </VictoryChart>
     </View>
   );

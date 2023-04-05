@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Switch, Pressable } from "react-native";
+import { View, Text, StyleSheet, Switch, Pressable,Button } from "react-native";
 import React, { useState } from "react";
 
 const Item = (props) => {
@@ -17,9 +17,9 @@ const Item = (props) => {
         <Text style={{ flex: 1, fontSize: 12 }}>{date}</Text>
       </View>
       <View style={styles.title}>
-        <Text style={{ fontSize: 12 }}>Alarm {id}</Text>
+        <Text style={{ fontSize: 12 }}>Alarm</Text>
       </View>
-      <Pressable style={{ elevation: 100 }} onClick={console.log("first")}>
+      <Button title="DELETE"style={{ elevation: 100 }} onClick={()=>console.log(id)}>
         <Text
           style={{
             color: "red",
@@ -30,7 +30,7 @@ const Item = (props) => {
         >
           DELETE
         </Text>
-      </Pressable>
+      </Button>
     </View>
   );
 };
