@@ -1,13 +1,6 @@
 
 # Smart Pillow
 
-## Contributors
-<p align="center">
-<a href="https://github.com/IoT-Smart-Pillow/IoT-Smart-Pillow/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=IoT-Smart-Pillow/IoT-Smart-Pillow" />
-</a>
-</p>
-
 ## Introduction
 Welcome to the official GitHub repository for NoneType, a group of developers passionate about building innovative technology solutions. This repository serves as a collection of our group projects and code snippets, showcasing our expertise in software development and programming.
 
@@ -16,6 +9,13 @@ This is a group project for the module "CS7NS2 - Internet of Things" at Trinity 
 Our team has utilized these components and technologies to build an innovative IoT solution that offers a seamless and intuitive user experience. We strive to maintain a high standard of quality in our code and are committed to delivering the best possible solutions to our clients and users.
 
 Whether you're looking for code samples, open-source projects, or want to collaborate with our team on a new project, our repository has something for everyone. Thank you for visiting our repository, and we look forward to sharing our work with you!
+
+## Contributors
+<p align="center">
+<a href="https://github.com/IoT-Smart-Pillow/IoT-Smart-Pillow/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=IoT-Smart-Pillow/IoT-Smart-Pillow" />
+</a>
+</p>
 
 ### Micropython
 Several reasons made Micropython the ideal language for the smart pillow project. First, the language is designed to be light and efficient, which is perfect for IoT devices with limited computing power. This makes it simpler to program the microcontroller to interact with other devices and sensors, and to manage data processing. Second, Micropython has a rich library of modules that enable easy integration with sensors and other hardware components commonly used in IoT devices. These libraries were also quick and easy to integrate, their functionalities ranged from multi-threading to encryption. This enabled faster development and prototyping of the smart pillow system. Third, Micropython has an interactive REPL that allows for testing and debugging of code on the fly, which was useful in finding and fixing errors in the code during development.
