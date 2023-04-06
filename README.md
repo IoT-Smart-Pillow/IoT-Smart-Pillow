@@ -17,7 +17,7 @@ Whether you're looking for code samples, open-source projects, or want to collab
 </a>
 </p>
 
-##Details
+## Details
 ### Micropython
 Several reasons made Micropython the ideal language for the smart pillow project. First, the language is designed to be light and efficient, which is perfect for IoT devices with limited computing power. This makes it simpler to program the microcontroller to interact with other devices and sensors, and to manage data processing. Second, Micropython has a rich library of modules that enable easy integration with sensors and other hardware components commonly used in IoT devices. These libraries were also quick and easy to integrate, their functionalities ranged from multi-threading to encryption. This enabled faster development and prototyping of the smart pillow system. Third, Micropython has an interactive REPL that allows for testing and debugging of code on the fly, which was useful in finding and fixing errors in the code during development.
 
