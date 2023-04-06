@@ -42,17 +42,16 @@ Overall, the combination of Expo React Native and Victory Native allowed us to c
 
 
 ## Images of the application
-<div style="width:60px ; height:80px">
-![Home Screen](https://user-images.githubusercontent.com/51954157/230272755-e125ff90-3588-4d20-ab05-dc4aa0585d5d.jpeg)
-</div>
-<br/>
-<br/>
-<div style="width:60px ; height:80px">
-![Alarm Screen](https://user-images.githubusercontent.com/51954157/230272787-03d96187-407c-4f82-98bc-fdffe4ad98bd.jpeg)
-</div>
-<br/>
-<br/>
-![Watch Our Demo](https://youtu.be/zU9AoqL20-M)
 
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/51954157/230272755-e125ff90-3588-4d20-ab05-dc4aa0585d5d.jpeg" width="250" height="500"/>  &nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/51954157/230272787-03d96187-407c-4f82-98bc-fdffe4ad98bd.jpeg" width="250" height="500"/> 
+</p>
+<br/>
+<br/>
+![Video](https://youtu.be/zU9AoqL20-M)
+<video src="https://youtu.be/zU9AoqL20-M"></video>
+<br/>
+<br/>
 
 Thank you for taking the time to explore our project! We are proud to have worked together as a team to create this innovative smart pillow using cutting-edge IoT technology. Our hope is that this project will inspire others to think creatively about how IoT can be used to improve everyday life. If you have any questions or feedback, please feel free to reach out to us.
