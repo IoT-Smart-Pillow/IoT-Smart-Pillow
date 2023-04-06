@@ -1,6 +1,14 @@
 
 # Smart Pillow
 
+## Contributors
+<p align="center">
+<a href="https://github.com/IoT-Smart-Pillow/IoT-Smart-Pillow/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=IoT-Smart-Pillow/IoT-Smart-Pillow" />
+</a>
+</p>
+
+## Introduction
 Welcome to the official GitHub repository for NoneType, a group of developers passionate about building innovative technology solutions. This repository serves as a collection of our group projects and code snippets, showcasing our expertise in software development and programming.
 
 This is a group project for the module "CS7NS2 - Internet of Things" at Trinity College Dublin. For this project, we have utilized cutting-edge hardware components, including an ESP32 and ESP32-S2-Kaluga, a pressure sensor, a microphone, a tilt sensor, a temperature and humidity sensor, a vibration motor, and a speaker. We have also used technologies such as Expo React Native and the Victory Native package for data visualization.
@@ -16,8 +24,10 @@ Several reasons made Micropython the ideal language for the smart pillow project
 In this project, the smart pillow system relies on the esp32 microcontroller for its core functionality. The esp32 collects data from various sensors inside the pillow, such as a pressure sensor and a motion detector, and sends it to another component called Kaluga. The esp32 is selected for its small size, low energy consumption, and Wi-Fi capability, which allows it to communicate wirelessly with the Kaluga and cloud platforms like AWS IoT. The esp32 has more GPIO pins than other microcontrollers that were evaluated, such as esp8266, Raspberry Pi, and Arduino Uno. These pins are vital for reading inputs and controlling outputs. The esp32 also supports micropython code, which simplifies the testing and development of the system. Therefore, the esp32 is an essential choice for the smart pillow system, as it meets the needs for functionality, compactness, and low energy consumption.
 
 ### ESP-32-S2-Kaluga
+Kaluga is an excellent development board for embedded system projects. It is based on the ESP32-S2 chip, which is a powerful microcontroller that combines Wi-Fi and Bluetooth connectivity, low power consumption, and a rich set of peripherals. The ESP32-S2-Kaluga-1 board is specifically designed to help developers prototype and develop IoT devices quickly and easily. Another advantage of the Kaluga board is its ease of use. The board is pre-programmed with a bootloader, which allows you to easily upload new firmware over USB. Additionally, the board includes a JTAG connector, which allows for easy debugging and troubleshooting. It acted as a bridge between ESP32 and AWS EC2. We connected it with a speaker to sound an alarm.
 
 ### Flask API
+Flask is a lightweight and flexible Python web framework that is commonly used for developing RESTful APIs. Flask's simplicity and flexibility make it an ideal choice for building REST APIs, as it allows developers to create custom and scalable APIs quickly and easily. Flask provides a variety of tools and features that make it easy to handle HTTP requests, manage database connections, and implement authentication and authorization. Additionally, Flask integrates well with other Python libraries and frameworks, making it a powerful tool for building complex web applications. Overall, Flask's ease of use, flexibility, and powerful features make it a great choice for creating REST APIs.
 
 ### Mobile Application
 We chose to implement the mobile application using Expo React Native. Expo is an open-source platform that allows developers to build and deploy mobile applications for both iOS and Android platforms using the React Native framework.
@@ -47,10 +57,10 @@ Overall, the combination of Expo React Native and Victory Native allowed us to c
 <p align="center">
 <img src="https://user-images.githubusercontent.com/51954157/230272755-e125ff90-3588-4d20-ab05-dc4aa0585d5d.jpeg" width="250" height="500"/>  &nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/51954157/230272787-03d96187-407c-4f82-98bc-fdffe4ad98bd.jpeg" width="250" height="500"/> 
 </p>
-<br/>
-<br/>
-![Video](https://youtu.be/zU9AoqL20-M)
-<video src="https://youtu.be/zU9AoqL20-M"></video>
+
+
+## Demo of the application
+<p align="center"><a href="https://youtu.be/zU9AoqL20-M" title="Watch Demo"><img src="https://i.ytimg.com/vi/zU9AoqL20-M/hqdefault.jpg" alt="Alternate Text" /></a></p>
 <br/>
 <br/>
 
