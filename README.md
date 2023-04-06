@@ -42,8 +42,16 @@ Overall, the combination of Expo React Native and Victory Native allowed us to c
 
 
 ## Images of the application
+<div style="width:60px ; height:80px">
 ![Home Screen](https://user-images.githubusercontent.com/51954157/230272755-e125ff90-3588-4d20-ab05-dc4aa0585d5d.jpeg)
+</div>
+<br/>
+<br/>
+<div style="width:60px ; height:80px">
 ![Alarm Screen](https://user-images.githubusercontent.com/51954157/230272787-03d96187-407c-4f82-98bc-fdffe4ad98bd.jpeg)
+</div>
+<br/>
+<br/>
 ![Watch Our Demo](https://youtu.be/zU9AoqL20-M)
 
 
